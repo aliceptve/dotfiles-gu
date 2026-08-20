@@ -7,7 +7,7 @@ REPO_URL="https://github.com/aliceptve/dotfiles-gu.git"
 
 IMAGE="$DEFAULT_IMAGE"
 MODE="manual"
-BRANCH="main"
+BRANCH=""
 
 usage() {
   cat <<EOF
@@ -118,9 +118,9 @@ cat > /tmp/dotfiles-test.sh <<'TESTSCRIPT'
 set -euo pipefail
 cd ~
 printf "  cloning dotfiles...\n" >&2
-git clone -q ${DOTFILES_BRANCH:+--branch "$DOTFILES_BRANCH" }"$DOTFILES_REPO" dotfiles
+git clone -q ${DOTFILES_BRANCH:+--branch "$DOTFILES_BRANCH" }"$DOTFILES_REPO" dotfiles-gu
 printf "  running install.sh...\n" >&2
-pushd dotfiles >/dev/null
+pushd dotfiles-gu >/dev/null
 bash install.sh >/dev/null
 popd >/dev/null
 printf "  setup complete.\n" >&2
