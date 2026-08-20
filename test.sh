@@ -118,6 +118,7 @@ cat > /tmp/dotfiles-test.sh <<'TESTSCRIPT'
 set -euo pipefail
 cd ~
 printf "  cloning dotfiles...\n" >&2
+printf "  git clone -q ${DOTFILES_BRANCH:+--branch "$DOTFILES_BRANCH" }"$DOTFILES_REPO" dotfiles-gu\n" >&2
 git clone -q ${DOTFILES_BRANCH:+--branch "$DOTFILES_BRANCH" }"$DOTFILES_REPO" dotfiles-gu
 printf "  running install.sh...\n" >&2
 pushd dotfiles-gu >/dev/null
