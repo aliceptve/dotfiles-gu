@@ -37,4 +37,4 @@ cp .copilot/instructions/writing-style.instructions.md ~/.copilot/instructions/
 ###
 
 printf "\n\n# Shell extras from aliceptve/dotfiles-gu\n\n" >> ~/.bash_aliases
-cat shell_extras.sh >> ~/.bash_aliases
+cat shell-extras.sh >> ~/.bash_aliases

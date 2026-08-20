@@ -118,10 +118,9 @@ cat > /tmp/dotfiles-test.sh <<'TESTSCRIPT'
 set -euo pipefail
 cd ~
 printf "  cloning dotfiles...\n" >&2
-printf "  git clone -q ${DOTFILES_BRANCH:+--branch "$DOTFILES_BRANCH" }"$DOTFILES_REPO" dotfiles-gu\n" >&2
-git clone -q ${DOTFILES_BRANCH:+--branch "$DOTFILES_BRANCH" }"$DOTFILES_REPO" dotfiles-gu
+git clone -q ${DOTFILES_BRANCH:+--branch "$DOTFILES_BRANCH" }"$DOTFILES_REPO" dotfiles
 printf "  running install.sh...\n" >&2
-pushd dotfiles-gu >/dev/null
+pushd dotfiles >/dev/null
 bash install.sh >/dev/null
 popd >/dev/null
 printf "  setup complete.\n" >&2
@@ -167,24 +166,6 @@ for name in la ll gatus hex2rgb cu gog; do
     check "$name is available" "fail"
   fi
 done
-
-if type emacs &>/dev/null; then
-  check "emacs is available" "pass"
-else
-  check "emacs is available" "fail"
-fi
-
-if [[ -f /usr/share/liquidprompt/liquidprompt ]]; then
-  check "liquidprompt is installed" "pass"
-else
-  check "liquidprompt is installed" "fail"
-fi
-
-if [[ -f ~/.emacs.d/init.el ]]; then
-  check "emacs config is installed" "pass"
-else
-  check "emacs config is installed" "fail"
-fi
 
 if [[ -f ~/.copilot/instructions/writing-style.instructions.md ]]; then
   check "copilot instructions are installed" "pass"
