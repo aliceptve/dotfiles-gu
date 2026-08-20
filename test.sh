@@ -7,7 +7,7 @@ REPO_URL="https://github.com/aliceptve/dotfiles-gu.git"
 
 IMAGE="$DEFAULT_IMAGE"
 MODE="manual"
-BRANCH=""
+BRANCH="main"
 
 usage() {
   cat <<EOF
