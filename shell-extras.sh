@@ -36,8 +36,8 @@ alias la='ls -ltraph'
 
 alias vi='vim'
 
-bindkey '\e[A' history-beginning-search-backward
-bindkey '\e[B' history-beginning-search-forward
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
 
 function hex2rgb() {
   local hex=$1
